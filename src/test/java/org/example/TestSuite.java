@@ -57,13 +57,13 @@ public class TestSuite extends BaseTest {
     ReferAProduct referAProduct=new ReferAProduct();
     @Test
     public void verifyRegisteredUserCanReferAProduct() throws InterruptedException {
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
-        homePage.clickOnRegisterButton();
-        registrationPage.fillRegistrationDetails();
-     homePage.clickContinue();
-        homePage.addToCartBuildAComputer();
-        buildAComputer.clickMailButton();
-     referAProduct.referProductToFriend();
+    WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
+    homePage.clickOnRegisterButton();
+    registrationPage.fillRegistrationDetails();
+    homePage.clickContinue();
+    homePage.addToCartBuildAComputer();
+    buildAComputer.clickMailButton();
+    referAProduct.referProductToFriend();
 
 
     }
@@ -76,5 +76,66 @@ public class TestSuite extends BaseTest {
         homePage._registeredCanVote();
 
     }
+    @Test
+    public void verifyProductNameIsPrinted(){
+
+        homePage.printProductName();
+    }
+    @Test
+    public void verifyAlertMessageSearchFunction() throws InterruptedException {
+        homePage.verifyAlertNessage();
+
+    }
+    @Test
+    public void verifyCurrencyCanBeSelectedSuccessfully() throws InterruptedException {
+        homePage.verifyCurrencyCanBeSelectedAccordingly();
+        Thread.sleep(5000);
+    }
+   @Test
+    public void verifyUserCanSearchGivenProductSuccessfully() throws InterruptedException {
+        homePage.searchFunctionality();
+        Thread.sleep(5000);
+   }
+   NewReleaseDetailsPage newReleaseDetailsPage=new NewReleaseDetailsPage();
+   @Test
+   public void verifyUserCanCommentOnNopCommerceDetails(){
+        homePage.clickOnDetails();
+        newReleaseDetailsPage.commentsFillDetails();
+
+   }
+   ShoppingCartBuildAComputer shoppingCartBuildAComputer=new ShoppingCartBuildAComputer();
+    CheckoutAsGuest checkoutAsGuest=new CheckoutAsGuest();
+    BillingDetails billingDetails=new BillingDetails();
+    ShippingDetails shippingDetails=new ShippingDetails();
+    PaymentSelection paymentSelection=new PaymentSelection();
+    CreditCardDetails creditCardDetails=new CreditCardDetails();
+    PaymentConfirm paymentConfirm=new PaymentConfirm();
+    GuestUserSuccessOrder guestUserSuccessOrder=new  GuestUserSuccessOrder();
+   @Test
+   public void verifyGuestUserCanCheckOutSuccessfully() throws InterruptedException {
+       homePage.clickBuildComputer();
+       buildAComputer.buildAComputerDetails();
+       shoppingCartBuildAComputer.shoppingCartCheckout();
+       checkoutAsGuest.clickCheckoutAsGuest();
+       billingDetails.fillBillingAddressDetails();
+       shippingDetails.confirmShipping();
+       paymentSelection.paymentConfirmation();
+       creditCardDetails.creditCardDetailsFillIn();
+       paymentConfirm.clickPaymentConfirm();
+       guestUserSuccessOrder.verifyGuestUsersOrderSucceeded();
+       Thread.sleep(1000);
+   }
+   FacebookPage facebookPage=new FacebookPage();
+   @Test
+    public void verifyUserCanUseFacebookLink(){
+       homePage.clickOnFacebook();
+       facebookPage.facebookPageView();
+
+   }
+   @Test
+    public void verifyUserMustSelectAVoteOption() throws InterruptedException {
+       homePage.voteAlertMessage();
+
+   }
 }
 

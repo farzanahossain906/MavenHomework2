@@ -13,12 +13,23 @@ public class RegistrationPage extends Utils{
     private By _password=(By.xpath("//input[@type=\"password\"][1]"));
     private By _confirmPassword=(By.id("ConfirmPassword"));
     private By _clickSubmitButton =(By.xpath("//div[@class='buttons']//button[@type='submit']"));
+    private By _selectGender=(By.xpath("//span[@class='female']//input[@id='gender-female']"));
+    private By _selectDate=(By.xpath("//select[@name='DateOfBirthDay']"));
+    private By _selectMonth=(By.xpath("//select[@name='DateOfBirthMonth']"));
+    private By _selectYear=(By.xpath("//select[@name='DateOfBirthYear']"));
 
     public void fillRegistrationDetails(){
+        //selecting gender
+
         //type firstname
         textType(_firstname,"Test1Name");
         //type last name
         textType(_lastName,("Test2Name"));
+        //select date of birth
+        selectElementFromIndex(_selectDate,25);
+        selectElementByText(_selectMonth,"April");
+        selectElementFromValue(_selectYear,"2002");
+
         //type email address
         textType(_email,("testEmail"+timeStamp()+"@gmail.com"));
         System.out.println(timestamp);
@@ -28,6 +39,7 @@ public class RegistrationPage extends Utils{
         textType(_confirmPassword,("software123"));
         //click on register button
         clickElement(_clickSubmitButton);
+
 
 
     }
