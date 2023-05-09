@@ -89,6 +89,7 @@ public class HomePage extends Utils {
     private By _productName = By.xpath("//div[contains(@class, 'product-grid home-page-product-grid')]//h2");
 
     public void printProductName() {
+        //product names print
         listElements(_productName);
 
     }
@@ -118,8 +119,11 @@ public class HomePage extends Utils {
     private By _searchSoething =By.id("small-searchterms");
     private By _printSearchedProducts=By.xpath("//div[@class='item-grid']//h2[@class='product-title']");
     public void searchFunctionality(){
+        //type something on search bar
         textType(_searchSoething,"Apple");
+        //click on search
         clickElement(_clickSearch);
+        //print all the products name with this word
         listElements(_printSearchedProducts);
     }
     private By _clickNewReleaseDetails=By.xpath("//div[@class='buttons']//a[@href='/nopcommerce-new-release']");

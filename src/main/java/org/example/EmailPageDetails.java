@@ -18,7 +18,7 @@ public class EmailPageDetails extends Utils{
 
       String message= getTextFromElement(_errorMailText);
        System.out.println(message);
-
+       //verify the test case
        Assert.assertEquals(message,expected);
 
 
