@@ -52,6 +52,7 @@ public class Utils extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
    public static void listElements(By by){
+        //creating reusable method for list elements
        List<WebElement> productNames = driver.findElements(by);
        for (WebElement e :
                productNames) {
@@ -65,6 +66,7 @@ public class Utils extends BasePage {
        driver.close();
    }
     public static void alertMethod() throws InterruptedException {
+        //alert method
         Alert alert = driver.switchTo().alert();
 
     }

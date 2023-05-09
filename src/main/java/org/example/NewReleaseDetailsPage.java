@@ -10,6 +10,7 @@ public class NewReleaseDetailsPage extends Utils{
     private By _successMessage=By.xpath("//div[@class='notifications']");
     private By _newComment=By.xpath("//div[@class='comment news-comment'][2]");
     public void commentsFillDetails(){
+        //adding title and comment
         textType(_typeTitle,"About a product");
         textType(_typeComment,"The product is really good");
         clickElement(_clickNewComment);

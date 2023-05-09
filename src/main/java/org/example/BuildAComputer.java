@@ -18,6 +18,7 @@ public class BuildAComputer extends Utils{
     private By _addToCart=By.xpath("//button[@id='add-to-cart-button-1']");
     private By _shoppingCart=By.xpath("//p[@class='content']//a[@href='/cart']");
     public void buildAComputerDetails(){
+        //selecting details to order this product
         selectElementFromValue(_selectProcessor,"1");
         selectElementFromValue(_selectRam,"5");
        clickElement(_selectHDD);

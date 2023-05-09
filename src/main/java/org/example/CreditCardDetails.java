@@ -12,6 +12,7 @@ public class CreditCardDetails extends Utils{
     private By _clickConfirm=By.xpath("//button[@class='button-1 payment-info-next-step-button']");
 
     public void creditCardDetailsFillIn(){
+        //fill all the credit card details
         selectElementFromValue(_selectCardType,"MasterCard");
         textType(_typeCardHolderName,"test 12");
         textType(_typeCardNumber,"5410256451598149");

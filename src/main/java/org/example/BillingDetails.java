@@ -18,6 +18,7 @@ public class BillingDetails extends Utils{
     private By _clickContinue=By.xpath("//button[@onclick='Billing.save()']");
 
     public void fillBillingAddressDetails(){
+        //filling billing details
         textType(_typeName1,"test1");
         textType(_typeName2,"test2");
         textType(_typeEmail,"test12"+timeStamp()+"@gmail.com");
